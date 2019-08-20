@@ -9,6 +9,30 @@ Laboratorio 1 de ARSW
     + ## Part 1:
         + **As reviewed in the readings, complete the CountThread classes, so that they define the life cycle of a thread that prints the numbers between A and B.**
 
+        ```java
+        public class CountThread extends Thread {
+
+            private final int A;
+            private final int B;
+            private Thread t;
+            private final String threadName;
+
+            public CountThread(String name, int in, int out) {
+                this.threadName = name;
+                this.A = in;
+                this.B = out;
+            }
+
+            @Override
+            public void run() {
+                for (int i = A; i <= B; i++) {
+                    System.out.println("Thread: " + threadName + ", " + i);
+                }
+            }
+
+        }
+        ```
+
         + **Complete the main method of the CountMainThreads class so that:**
             + **Create 3 threads of type CountThread, assigning the first one the interval [0..99], the second one [99..199], and the third one [200..299].**
             ```java
@@ -48,11 +72,45 @@ Laboratorio 1 de ARSW
             }
             ```
 
+            > La diferencia es que cuando se llama al método **start()** , se crea un nuevo subproceso y el código dentro de **run()** se ejecuta en un nuevo subproceso mientras que si se llama al método **run()** directamente no se creará un nuevo subproceso y el código dentro de **run()** se ejecutara en el hilo actual directamente.
+
+            <table style="width:100%">
+            <tr>
+            <th align="center">
+            thread 1
+            </th>
+            <th align="center">
+            thread 2
+            </th>
+            <th align="center">
+            thread 3
+            </th>                        
+            </tr>
+            <tr>
+            <th>
             <p align="center">
-            <img src="https://drive.google.com/uc?export=view&id=1EyrHb76wGqrKD5GakdXPh6dCCoXz_Gg-" />
+            <img src="https://drive.google.com/uc?export=view&id=1tIpGmdUyY9V3hAF-WXxXu0Sblb3hYaht" />
             </p>
+            </th>
+            <th>
+            <p align="center">
+            <img src="https://drive.google.com/uc?export=view&id=1AzVFmsaiA_STjHQTTgzarjoLTmOPDAF5" />
+            </p>
+            </th>
+            <th>
+            <p align="center">
+            <img src="https://drive.google.com/uc?export=view&id=1A3oiMwgs8cuoqlG29R-y1LvlUc7zMOma" />
+            </p>
+            </th>
+            </tr>
+            </table>
     ----
     + ## Part 2:
+        + **Create a Thread type class that represents the life cycle of a thread that calculates a portion of the required digits.** 
+
+        + **Have the PiDigits.getDigits() function receive as an additional parameter an N value, corresponding to the number of threads between which the solution is to be parallelized. Have that function wait until the N threads finish solving the problem to combine the answers and then return the result. For this, review the join method of the Java concurrency API.**
+
+        + **Adjust the JUnit tests, considering the cases of using 1, 2 or 3 threads (the last one to consider an odd number of threads!)**
     ----
     + ## Part 3:
     ----
