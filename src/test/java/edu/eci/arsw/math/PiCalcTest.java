@@ -39,6 +39,9 @@ public class PiCalcTest {
 
         for (int start = 0; start < expected.length; start++) {
             for (int count = 0; count < expected.length - start; count++) {
+                ParallelCalculation T0 = new ParallelCalculation(100,1);
+                String  res1 = T0.calculate();
+                
                 byte[] digits = PiDigits.getDigits(start, count);
                 assertEquals(count, digits.length);
 
