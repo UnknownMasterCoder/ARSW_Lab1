@@ -1,4 +1,4 @@
-# ARSW_Lab1 prueba hhhh
+# ARSW_Lab1
 Laboratorio 1 de ARSW
 # Group:
 + **PEDRO JOSE MAYORGA NAVARRETE** - *Initial work* - [unknownmastercoder](https://github.com/unknownmastercoder)
