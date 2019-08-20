@@ -7,10 +7,10 @@ Laboratorio 1 de ARSW
                 
 + # **BBP Formula**
     + ## Part 1:
-        + As reviewed in the readings, complete the CountThread classes, so that they define the life cycle of a thread that prints the numbers between A and B.
+        + **As reviewed in the readings, complete the CountThread classes, so that they define the life cycle of a thread that prints the numbers between A and B.**
 
-        + Complete the main method of the CountMainThreads class so that: 
-            + Create 3 threads of type CountThread, assigning the first one the interval [0..99], the second one [99..199], and the third one [200..299]. 
+        + **Complete the main method of the CountMainThreads class so that:**
+            + **Create 3 threads of type CountThread, assigning the first one the interval [0..99], the second one [99..199], and the third one [200..299].**
             ```java
             public static void main(String a[]) {
                 CountThread T1 = new CountThread("1",0,99);
@@ -18,7 +18,7 @@ Laboratorio 1 de ARSW
                 CountThread T3 = new CountThread("3",200,299);
             }
             ```
-            + Start all three threads with start()
+            + **Start all three threads with start()**
             ```java
             public static void main(String a[]) {
                 CountThread T1 = new CountThread("1",0,99);
@@ -29,13 +29,13 @@ Laboratorio 1 de ARSW
                 T3.start(); //start()
             }
             ```
-            + Run and check the output on screen.
+            + **Run and check the output on screen.**
             
             <p align="center">
             <img src="https://drive.google.com/uc?export=view&id=1tIpGmdUyY9V3hAF-WXxXu0Sblb3hYaht" />
             </p>
 
-            + Change the beginning with start() to run(). How does the output change? Why?
+            + **Change the beginning with start() to run(). How does the output change? Why?**
 
             ```java
             public static void main(String a[]) {
