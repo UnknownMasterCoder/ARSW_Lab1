@@ -39,9 +39,6 @@ public class PiCalcTest {
 
         for (int start = 0; start < expected.length; start++) {
             for (int count = 0; count < expected.length - start; count++) {
-                ParallelCalculation T0 = new ParallelCalculation(100,1);
-                String  res1 = T0.calculate();
-                
                 byte[] digits = PiDigits.getDigits(start, count);
                 assertEquals(count, digits.length);
 
@@ -50,6 +47,48 @@ public class PiCalcTest {
                 }
             }
         }
+    }
+    
+    /**
+     *
+     * @throws InterruptedException
+     */
+    @Test
+    public void piGenTest_1thread() throws InterruptedException {
+        //Resultado esperado obtenido de Wolfram alpha
+        String expected = "243F6A8885A308D313198A2E03707344A4093822299F31D0082EFA98EC4E6C89452821E638D01377BE5466CF34E90C6CC0AC";
+        
+        ParallelCalculation test1 = new ParallelCalculation(100,1);
+        String obtained = test1.calculate();        
+        assertEquals(expected, obtained);
+    }
+    
+    /**
+     *
+     * @throws InterruptedException
+     */
+    @Test
+    public void piGenTest_2thread() throws InterruptedException {
+        //Resultado esperado obtenido de Wolfram alpha
+        String expected = "243F6A8885A308D313198A2E03707344A4093822299F31D0082EFA98EC4E6C89452821E638D01377BE5466CF34E90C6CC0AC";
+        
+        ParallelCalculation test2 = new ParallelCalculation(100,2);
+        String obtained = test2.calculate();        
+        assertEquals(expected, obtained);
+    }
+    
+    /**
+     *
+     * @throws InterruptedException
+     */
+    @Test
+    public void piGenTest_3thread() throws InterruptedException {
+        //Resultado esperado obtenido de Wolfram alpha
+        String expected = "243F6A8885A308D313198A2E03707344A4093822299F31D0082EFA98EC4E6C89452821E638D01377BE5466CF34E90C6CC0AC";
+        
+        ParallelCalculation test3 = new ParallelCalculation(100,3);
+        String obtained = test3.calculate();        
+        assertEquals(expected, obtained);
     }
 
 }

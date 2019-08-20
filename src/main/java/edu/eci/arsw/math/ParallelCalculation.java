@@ -33,17 +33,16 @@ public class ParallelCalculation {
         }
     }
     
-    public void calculate() throws InterruptedException{
+    public String calculate() throws InterruptedException{
         
         ThreadPi threads[] = new ThreadPi[threadsNumber];
         width = 1.0 / (double) digitsNumber;
         int[] intArray = new int[] {3,3,4};
         for (int i=0; i < threadsNumber; i++){
-
             long start =  i * digitsNumber/threadsNumber;
             long count =   digitsNumber/threadsNumber;
             //int end = (i+1) * (digitsNumber/threadsNumber);
-            threads[i] = new ThreadPi(Integer.toString(i), (int)start, (int)this.array[i], (int) width);
+            threads[i] = new ThreadPi(Integer.toString(i), (int)start, (int)this.array[i]);
             threads[i].run();
         }
         
@@ -54,7 +53,9 @@ public class ParallelCalculation {
             threads[i].join();
             res += threads[i].getValue();
         }
+       
         System.out.println("\nRes: "+res+"\n");
+        return res;
     }
     
     

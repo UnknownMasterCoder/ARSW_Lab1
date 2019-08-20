@@ -12,20 +12,18 @@ package edu.eci.arsw.math;
 public class ThreadPi extends Thread{
     private final int A;
     private final int B;
-    private final int width;
     private String res;
 
-    public ThreadPi(String name, int in, int out, int w){//, int hilos) {
+    public ThreadPi(String name, int in, int out){//, int hilos) {
         this.A = in;
         this.B = out;
-        this.width = w;
         this.res = "";
         //this.N = hilos;
     }
     @Override
     public void run() {
         byte[] digits;
-        digits = PiDigits.getDigits(A, B, width);
+        digits = PiDigits.getDigits(A, B);
         res = ParallelCalculation.bytesToHex(digits);
     }
     public String getValue() {
