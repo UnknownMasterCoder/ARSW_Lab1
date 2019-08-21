@@ -43,7 +43,7 @@ public class ParallelCalculation {
             long count =   digitsNumber/threadsNumber;
             //int end = (i+1) * (digitsNumber/threadsNumber);
             threads[i] = new ThreadPi(Integer.toString(i), (int)start, (int)this.array[i]);
-            threads[i].run();
+            threads[i].start();
         }
         
         //Join all the threads
@@ -58,8 +58,6 @@ public class ParallelCalculation {
         return res;
     }
     
-    
-
     public static String bytesToHex(byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];
         for (int j = 0; j < bytes.length; j++) {

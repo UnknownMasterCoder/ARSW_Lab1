@@ -16,7 +16,7 @@ public class Main {
     public static void main(String a[]) throws InterruptedException {
         
         System.out.println("Case 1:");
-        ParallelCalculation T0 = new ParallelCalculation(10,3);
+        ParallelCalculation T0 = new ParallelCalculation(1000000,500);
         T0.calculate();
         /*
         System.out.println("Case 2:\n");
